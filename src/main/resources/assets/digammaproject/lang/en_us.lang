@@ -1,5 +1,7 @@
 item.ingot_digammium.name=Digammium Ingot
 item.digammite.name=Digammite
+item.euphemite.name=Euphemite
+item.crystal_radspice.name=Neoveline Crystals
 itemGroup.tabAddon=Project Digamma
 tile.digammafite_0.name=Digammafite
 tile.digammafite_1.name=Hot Digammafite

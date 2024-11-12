@@ -18,6 +18,8 @@ public class ModItems {
 
     public static final Item ingot_digammium = new ItemHazardAddon("ingot_digammium").addRadiation(160).addFire(5).addDigamma(0.5F).addHydroReactivity().toItem();
     public static final Item digammite = new ItemDigammite("digammite").addRadiation(80).addDigamma(0.25F).toItem();
+    public static final Item crystal_radspice = new ItemHazardAddon("crystal_radspice").addRadiation(100000).addFire(5).addHydroReactivity().addBlinding().addToxic(12).toItem();
+    public static final Item euphemite = new ItemBaseAddon("euphemite");
 
     public static void preInit(){
         for(Item item : ALL_ITEMS){

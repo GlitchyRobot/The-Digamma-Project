@@ -1,9 +1,7 @@
 package com.digamma.items.special;
 
 import com.digamma.items.ModItems;
-import com.digamma.main.MainRegistry;
 import com.hbm.explosion.ExplosionChaos;
-import com.hbm.items.special.ItemHazard;
 import com.hbm.modules.ItemHazardModule;
 import com.hbm.util.ContaminationUtil;
 import com.hbm.util.I18nUtil;
@@ -11,7 +9,6 @@ import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.text.TextFormatting;
@@ -20,7 +17,6 @@ import net.minecraft.world.World;
 import java.util.List;
 
 public class ItemDigammite  extends ItemHazardAddon {
-    ItemHazardModule module;
     public ItemDigammite(String s) {
         super(s);
     }
