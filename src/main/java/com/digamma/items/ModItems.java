@@ -2,6 +2,7 @@ package com.digamma.items;
 
 import com.digamma.blocks.ModBlocks;
 import com.digamma.blocks.items.ItemBlockHazardAddon;
+import com.digamma.items.special.ItemContaminatingAddon;
 import com.digamma.items.special.ItemDigammite;
 import com.digamma.items.special.ItemHazardAddon;
 import com.hbm.interfaces.IItemHazard;
@@ -20,6 +21,7 @@ public class ModItems {
     public static final Item digammite = new ItemDigammite("digammite").addRadiation(80).addDigamma(0.25F).toItem();
     public static final Item crystal_radspice = new ItemHazardAddon("crystal_radspice").addRadiation(100000).addFire(5).addHydroReactivity().addBlinding().addToxic(12).toItem();
     public static final Item euphemite = new ItemBaseAddon("euphemite");
+    public static final Item digammeal = new ItemContaminatingAddon("digammeal", 500, 500).addDigamma(1.5F).toItem();
 
     public static void preInit(){
         for(Item item : ALL_ITEMS){
