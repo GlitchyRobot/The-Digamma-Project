@@ -32,7 +32,7 @@ public class MainRegistry
     public void preInit(FMLPreInitializationEvent event)
     {
         MinecraftForge.EVENT_BUS.register(new ModEventHandlerClient());
-
+        MinecraftForge.EVENT_BUS.register(new ModEventHandler());
         logger = event.getModLog();
         ModItems.preInit();
         ModBlocks.preInit();
