@@ -5,7 +5,9 @@ import com.digamma.items.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.ModelRegistryEvent;
+import net.minecraftforge.client.event.TextureStitchEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
@@ -25,5 +27,11 @@ public class ModEventHandlerClient {
     }
     private void registerBlockModel(Block block, int meta) {
         registerModel(Item.getItemFromBlock(block), meta);
+    }
+
+    @SubscribeEvent
+    public void textureStitch(TextureStitchEvent.Pre evt) {
+        evt.getMap().registerSprite(new ResourceLocation(MainRegistry.MODID, "blocks/forgefluid/digammaline_still"));
+		evt.getMap().registerSprite(new ResourceLocation(MainRegistry.MODID, "blocks/forgefluid/digammaline_flowing"));
     }
 }
