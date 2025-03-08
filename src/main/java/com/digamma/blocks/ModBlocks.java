@@ -33,7 +33,7 @@ public class ModBlocks {
     public static final Block block_digamma_corium = new BlockDigammaCorium(Material.IRON, SoundType.STONE, "block_digamma_corium").makeBeaconable().addRad3d(15000).addRadiation(1000.0F).addDigamma(3.333F).toBlock().setHardness(100.0F).setResistance(9000F).setCreativeTab(MainRegistry.contentTab);
     public static final Block block_digamma_corium_cobble = new BlockHazardDigammaAddon(Material.ROCK, SoundType.STONE, "block_digamma_corium_cobble").addRadiation(100.0F).addDigamma(0.333F).toBlock().setHardness(100.0F).setResistance(6000F).setCreativeTab(MainRegistry.contentTab);
 
-    public static final Material digammaline = (new MaterialLiquid(MapColor.RED) {
+    public static final Material fluiddigammaline = (new MaterialLiquid(MapColor.RED) {
         @Override
         public boolean blocksMovement() {
             return true;

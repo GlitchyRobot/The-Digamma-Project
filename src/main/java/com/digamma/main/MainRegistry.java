@@ -11,8 +11,11 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
+import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.relauncher.Side;
 import org.apache.logging.log4j.Logger;
 
 @Mod(modid = MainRegistry.MODID, name = MainRegistry.NAME, version = MainRegistry.VERSION)
@@ -26,9 +29,12 @@ public class MainRegistry
         FluidRegistry.enableUniversalBucket();
     }
 
+
+
     // ingots, nuggets, wires, machine parts
     public static CreativeTabs contentTab = new ContentTab(CreativeTabs.getNextID(), "tabAddon");
-    public static ClientProxy proxy;
+    @SidedProxy(clientSide = "com.digamma.main.ClientProxy", serverSide = "com.digamma.main.ServerProxy")
+    public static ServerProxy proxy;
 
     private static Logger logger;
 
@@ -48,7 +54,17 @@ public class MainRegistry
     @EventHandler
     public void init(FMLInitializationEvent event)
     {
-        // some example code
-        logger.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
+        ModItems.init();
+        ModBlocks.init();
+    }
+
+    @EventHandler
+    public void postInit(FMLPostInitializationEvent event) {
+        ModItems.postInit();
+        ModBlocks.postInit();
+        if(event.getSide() == Side.CLIENT) {
+            ModForgeFluids.registerFluidColors();
+        }
+        proxy.postInit(event);
     }
 }

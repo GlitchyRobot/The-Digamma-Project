@@ -18,7 +18,7 @@ public class ModForgeFluids {
     public static void init() {
         if(!FluidRegistry.registerFluid(digammaline))
             digammaline = FluidRegistry.getFluid("digammaline");
-        ModBlocks.digammaline_block = new DigammalineBlock(digammaline, ModBlocks.digammaline, "digammaline").setResistance(500F);
+        ModBlocks.digammaline_block = new DigammalineBlock(digammaline, ModBlocks.fluiddigammaline, "digammaline").setResistance(500F);
         digammaline.setBlock(ModBlocks.digammaline_block);
         FluidRegistry.addBucketForFluid(digammaline);
     }
